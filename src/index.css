@@ -6,6 +6,8 @@
 
 html{
   font-size: 62.5%;
+  background: black;
+  color: azure;
 }
 
 body {
@@ -21,4 +23,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul, ol{
+  list-style: none;
 }

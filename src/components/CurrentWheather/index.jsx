@@ -1,12 +1,13 @@
-import { type } from '@testing-library/user-event/dist/type';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { ListDays } from '../ListDays';
+import './style.css'
 
 export const CurrentWeather = () => {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() =>{
-    fetch(`${process.env.REACT_APP_API_URL}weather?lat=35&lon=139&appid=${process.env.REACT_APP_API_KEY}`)
+    fetch(`${process.env.REACT_APP_API_URL}weather?lat=70&lon=15&appid=${process.env.REACT_APP_API_KEY}`)
     .then(response => response.json())
     .then(data => {
       setWeather(data)
@@ -19,8 +20,9 @@ export const CurrentWeather = () => {
     return <p>Loading....</p>
   }
   return (
-    <section className='CurrentWeather'>
+    <section className='currentWeather'>
     <div className='CurrentWeather--details'>
+    <h2>{weather.sys.country}</h2>
       <h2>Temp</h2>
       <span>{weather.main.temp}°</span>
       <ul>
@@ -41,6 +43,7 @@ export const CurrentWeather = () => {
     <div className='CurrentWeather--img'>
      <img src='' alt='Weather'></img>
     </div>
+    <ListDays/>
     </section>
   )
 }
