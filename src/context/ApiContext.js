@@ -1,9 +1,10 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const ENDPOINT = process.env.REACT_APP_API_URL;
-const API = process.env.REACT_APP_API_USE;
+const API = process.env.REACT_APP_API;
+const k = process.env.REACT_APP_API_KEY;
 
-console.log('SOY TU PADRE', API)
+console.log('SOY TU PADRE', API, k)
 
 const APIContext = createContext({})
 
@@ -13,7 +14,6 @@ export const ApiContextProvider = ({children}) => {
 
     useEffect(() =>{
         fetch(`${ENDPOINT}weather?lat=70&lon=15&appid=cd624d1a76965d9c144c0e8d2bd0d2c8`)
-        // fetch(`${process.env.REACT_APP_API_URL}weather?lat=70&lon=15&appid=${process.env.REACT_APP_API_PUBLIC}`)
         .then((response) => response.json())
         .then( (weather) => {
           setData(weather)

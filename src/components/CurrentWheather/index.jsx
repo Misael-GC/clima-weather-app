@@ -32,7 +32,7 @@ export const CurrentWeather = () => {
     </div>
     <div className='CurrentWeather--img'>
      <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt='Weather'></img>
-    <p>{getCurrentDay(new Date().getDate())}</p>
+    <p>{new Date().toUTCString()}</p>
     </div>
     </section>
   )
