@@ -10,6 +10,7 @@ export const ApiContextProvider = ({children}) => {
         .then((response) => response.json())
         .then( (weather) => {
           setData(weather)
+          console.log(weather)
         });
       },[]);
 // el Provider recibe un parametro más que es el estado se lo ponemos con value

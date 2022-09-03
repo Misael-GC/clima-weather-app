@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApi } from '../../context/ApiContext';
 import './style.css'
+import { getCurrentDay } from '../../utilities/getDay'
 
 export const CurrentWeather = () => {
   const weather = useApi()
@@ -8,7 +9,7 @@ export const CurrentWeather = () => {
   if(!weather){
     return <p>Loading...</p>
   }
-
+  // console.log(weather)
   return (
     <section className='currentWeather'>
     <div className='CurrentWeather--details'>
@@ -31,7 +32,9 @@ export const CurrentWeather = () => {
     </div>
     <div className='CurrentWeather--img'>
      <img src='' alt='Weather'></img>
+    <p>{getCurrentDay(new Date().getDate())}</p>
     </div>
     </section>
   )
 }
+
