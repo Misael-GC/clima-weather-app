@@ -4,7 +4,7 @@ const ENDPOINT = process.env.REACT_APP_API_URL;
 const API = process.env.REACT_APP_API;
 const k = process.env.REACT_APP_API_KEY;
 
-console.log('SOY TU PADRE', API, k)
+console.log('SOY TU PADRE', k)
 
 const APIContext = createContext({})
 
@@ -13,7 +13,7 @@ export const ApiContextProvider = ({children}) => {
 
 
     useEffect(() =>{
-        fetch(`${ENDPOINT}weather?lat=70&lon=15&appid=cd624d1a76965d9c144c0e8d2bd0d2c8`)
+        fetch(`${ENDPOINT}weather?lat=70&lon=15&appid=${API}`)
         .then((response) => response.json())
         .then( (weather) => {
           setData(weather)

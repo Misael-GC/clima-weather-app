@@ -1,7 +1,7 @@
 import React from 'react';
 import { useApi } from '../../context/ApiContext';
 import './style.css'
-import { getCurrentDay } from '../../utilities/getDay'
+// import { getCurrentDay } from '../../utilities/getDay'
 
 export const CurrentWeather = () => {
   const weather = useApi()
