@@ -1,13 +1,16 @@
 .currentWeather{
     display: flex;
-    justify-content: space-around;
-    margin: 25px;
+    /* justify-content: space-around; */
+    gap: 25px;
+    margin: 25px auto;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid #f8f4f4;
+    max-width: 300px;
 }
 
 .currentWeather h2{
     font-size: 1.8rem;
     margin-bottom: 5px;
 }
+

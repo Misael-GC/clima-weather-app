@@ -8,12 +8,13 @@ console.log('SOY TU PADRE', k)
 
 const APIContext = createContext({})
 
-export const ApiContextProvider = ({children}) => {
-    const [ data, setData ] = useState(null)
 
+export const ApiContextProvider = ({children}) => {
+  const [ data, setData ] = useState(null)
+  const [coordinates, setCoordinates] = useState([47.44, 3.16])
 
     useEffect(() =>{
-        fetch(`${ENDPOINT}weather?lat=70&lon=15&appid=${API}`)
+        fetch(`${ENDPOINT}weather?lat=${coordinates[0]}&lon=${coordinates[1]}&appid=${API}`)
         .then((response) => response.json())
         .then( (weather) => {
           setData(weather)
